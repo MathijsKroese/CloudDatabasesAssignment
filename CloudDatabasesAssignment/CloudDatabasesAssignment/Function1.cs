@@ -22,7 +22,7 @@ namespace CloudDatabasesAssignment
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
 
-            response.WriteString("Welcome to Azure Functions!  \n\n This is a test message");
+            response.WriteString("Welcome to Azure Functions!  \n\n This is another test message");
 
             return response;
         }
