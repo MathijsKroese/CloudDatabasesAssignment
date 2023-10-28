@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDatabases", "CloudDatabases\CloudDatabases.csproj", "{7622257A-F651-4FD3-95B2-379457CF8F62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifySlack", "NotifySlack\NotifySlack.csproj", "{91A92B2A-2071-405E-8640-FF1A7C56177F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7622257A-F651-4FD3-95B2-379457CF8F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7622257A-F651-4FD3-95B2-379457CF8F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7622257A-F651-4FD3-95B2-379457CF8F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7622257A-F651-4FD3-95B2-379457CF8F62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91A92B2A-2071-405E-8640-FF1A7C56177F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91A92B2A-2071-405E-8640-FF1A7C56177F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91A92B2A-2071-405E-8640-FF1A7C56177F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91A92B2A-2071-405E-8640-FF1A7C56177F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9D9A3721-7008-4BEC-ADBD-9DA23A4CFCDF}
+		SolutionGuid = {47A7EF7F-7B98-4517-9CC2-77555EFE681E}
 	EndGlobalSection
 EndGlobal
