@@ -32,11 +32,10 @@ jobs:
           dotnet build --configuration Release --output ./output
           popd
 
-      - name: 'Run Azure Functions Action'
+      - name: Run Azure Functions Action
         uses: Azure/functions-action@v1
-        id: fa
         with:
-          app-name: 'notify-slack'
-          slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          app-name: my-function-app
+          slot-name: Production
+          package: './output'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_275453D7592D419EA04B8D134437B1E9 }}
