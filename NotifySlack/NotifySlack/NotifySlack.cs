@@ -49,10 +49,10 @@ namespace NotifySlack
 
         private static async Task<string> SendToSlack(string message)
         {
+            string slackWebhook = Environment.GetEnvironmentVariable("slack_webhook", EnvironmentVariableTarget.Process);
 
             using (HttpClient client = new HttpClient())
             {
-                string slackWebhook = "https://hooks.slack.com/services/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";
                 var payload = new StringContent(JsonConvert.SerializeObject(new { text = message }), Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(slackWebhook, payload);
 
@@ -67,17 +67,22 @@ namespace NotifySlack
         private static async Task UpdateDatabase(List<string> values)
         {
             var connectionString = Environment.GetEnvironmentVariable("notify-slack-connection", EnvironmentVariableTarget.Process);
-            var responseResult = 0;
-
+            
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 var db = connection.Database;
-                var query = $"INSERT INTO {db} VALUES('{values[4]}, {values[0]}, {values[1]}, {values[2]}, {values[3]}')";
+                var query = $"INSERT INTO StoredLogs (commitId, repository, username, timestamp, message) VALUES (@commitId, @repository, @username, @timestamp, @message)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    responseResult = await command.ExecuteNonQueryAsync();
+                    command.Parameters.AddWithValue("@message", values[0]);
+                    command.Parameters.AddWithValue("@repository", values[1]);
+                    command.Parameters.AddWithValue("@username", values[2]);
+                    command.Parameters.AddWithValue("@timestamp", values[3]);
+                    command.Parameters.AddWithValue("@commitId", values[4]);
+
+                    await command.ExecuteNonQueryAsync();
                 }
                 connection.Close();
             }
