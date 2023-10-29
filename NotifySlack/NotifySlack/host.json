@@ -1,5 +1,6 @@
 {
-    "version": "2.0",
+  "version": "2.0",
+  "functions": ["NotifySlack"],
     "logging": {
         "applicationInsights": {
             "samplingSettings": {
