@@ -7,6 +7,11 @@
     "appInsights1": {
       "type": "appInsights",
       "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "notify-slack-connection",
+      "dynamicId": null
     }
   }
 }
