@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "CloudDatabases": {
+    "ServerSideProgrammingAssignment": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7184",
+      "commandLineArgs": "--port 7052",
       "launchBrowser": false
     }
   }
